@@ -1,7 +1,7 @@
 # Getting started with The Wishlist #
 ## Developers' guide ##
 
-### What is the Wishlist ###
+### What is The Wishlist ###
 
 The Wishlist is a microservices-based, API-enabled engine that empowers retailers to understand and manage list of products their customers want to purchase.
 
@@ -18,11 +18,11 @@ We also **integrate inventory, pricing, stores and staff details**. This means w
 ### Basic concepts ###
 
 - The Wishlist provides world-class wishlist capabilities for **ecommerce platforms** and in-store retailers
-- Developers integrate the Wishlist into their ecommerce applications using the Wishlist's **REST and JavaScript APIs** 
+- Developers integrate The Wishlist into their ecommerce applications using The Wishlist's **REST and JavaScript APIs** 
 - Typically The Wishlist platform gives you **real-time integration with ecommerce, marketing, and often Point of Sale systems**. Wishlist data is exchanged between these systems, with The Wishlist as the middleware platform
 - You can also gain real-time or near real-time integration with customer, pricing and inventory systems. We integrate with these systems so **notifications** can be sent to retailers' customers when an item on their wishlist is out of stock, back in stock, or on sale.
 - We also may have **integration with the retailer's sales, product, staff and store data**. These data types are for marketing, attribution and reporting. They're typically integrated via batch processing/synchronisation.
-- In the wishlist, customers are identified by, at minimum, their email address (this **must be unique**, with no other account attached to the email address) 
+- In The Wishlist, customers are identified by, at minimum, their email address (this **must be unique**, with no other account attached to the email address) 
 
 ![Common identifier](docs/assets/common-identifier.png)
 
@@ -50,7 +50,7 @@ For example, you can notify customers based on:
 Key considerations for notifications:
 
 - **Product must exist for notifications to be triggered**<br> 
-Customers can add products to their wishlist, even if the product isn't available in the product catalogue. However, the product must exist with attributes such as image, price and description. These attributes have to be sent to the marketing platform with the notification payload. Otherwise the notification won't trigger.
+A customer can add products to their wishlist, even if the product isn't available in the product catalogue. However, the product must exist with attributes such as image, price and description. These attributes have to be sent to the marketing platform with the notification payload. Otherwise the notification won't trigger.
 - **Stock-based notifications**<br>
 The inventory must be loaded and synchronised into The Wishlist. For price-based notifications, pricing must be loaded and synchronised into The Wishlist.
 - **Emarsys integrations**<br>
