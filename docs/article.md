@@ -24,7 +24,7 @@ We also **integrate inventory, pricing, stores and staff details**. This means w
 - We also may have **integration with the retailer's sales, product, staff and store data**. These data types are for marketing, attribution and reporting. They're typically integrated via batch processing/synchronisation.
 - In The Wishlist, customers are identified by, at minimum, their email address (this **must be unique**, with no other account attached to the email address) 
 
-![Common identifier](docs/assets/common-identifier.png)
+![Common identifier](assets/common-identifier.png)
 
 ### Platform components ###
 
@@ -35,7 +35,7 @@ In addition to the core Wishlist platform, you get the following modules:
 - **Point Of sale elements** provide an optional React-based framework allowing retailers to offer wishlist service in-store, plus broader clienteling features to in-store staff
 - **Marketing integrations** allow third-party platforms &ndash; such as Emarsys, Klaviyo and DotDigital &ndash; to be used as the platform for Wishlist notifications. The Wishlist also offers an inbuilt email marketing platform.
 
-![Microservices](docs/assets/microservices.png)
+![Microservices](assets/microservices.png)
 
 ### Notifications ###
 
