@@ -15,9 +15,9 @@ The Wishlist also integrates to **Point Of Sale (POS)** in-store. This makes it 
 
 The Wishlist integrates web, store, marketing and ERP platforms and operations, and is designed to be flexible and scalable.
 
-The core of the platform is the wishlist (The Wishlist platform provides a **master record** for wishlist), customers and products. 
+The core of the platform provides world-class features to manage wishlists (The Wishlist platform provides the  **master record** for wishlist) and the customers that own those wishlists, including necessarily having real-time tracking of marketing preferences.
 
-The Wishlist also **integrates inventory, pricing, stores and staff details** from retailers so that it can deliver effective and timely marketing communications and reporting of wishlist activities.
+The Wishlist also **integrates inventory, pricing, stores and staff details** from retailers so that it can deliver effective and timely marketing communications and reporting of wishlist related events.
 
 ### Basic concepts ###
 
