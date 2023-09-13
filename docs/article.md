@@ -3,24 +3,26 @@
 
 ### What is The Wishlist ###
 
-The Wishlist is a microservices-based, API-enabled engine that empowers retailers to understand and manage list of products their customers want to purchase.
+The Wishlist is a microservices-based, API-enabled engine that empowers retailers to understand and manage listd of products that their customers want to purchase.
 
 **Automated notifications** can be configured and sent to customers when products are low in stock, back in stock, or available at a discount.
+
+A dashboard and reports help retailers understand customer demand, and wishlist conversions.
 
 The Wishlist also integrates to **Point Of Sale (POS)** in-store. This makes it an ideal way for retailers to bridge online and offline services.
 
 The Wishlist integrates web, store, marketing and ERP platforms and operations, and is designed to be flexible and scalable.
 
-At its core is the wishlist (The Wishlist platform provides a **master record** for the wishlist), customers and products. 
+The core of the platform is the wishlist (The Wishlist platform provides a **master record** for wishlist), customers and products. 
 
-We also **integrate inventory, pricing, stores and staff details**. This means we provide effective and timely marketing communications and reporting of wishlist activities.
+We also **integrate inventory, pricing, stores and staff details** from retailers so that we provide effective and timely marketing communications and reporting of wishlist activities.
 
 ### Basic concepts ###
 
 - The Wishlist provides world-class wishlist capabilities for **ecommerce platforms** and in-store retailers
 - Developers integrate The Wishlist into their ecommerce applications using The Wishlist's **REST and JavaScript APIs** 
 - Typically The Wishlist platform gives you **real-time integration with ecommerce, marketing, and often Point of Sale systems**. Wishlist data is exchanged between these systems, with The Wishlist as the middleware platform
-- You can also gain real-time or near real-time integration with customer, pricing and inventory systems. We integrate with these systems so **notifications** can be sent to retailers' customers when an item on their wishlist is out of stock, back in stock, or on sale.
+- You can also integrate in real-time or near real-time integration with customer, pricing and inventory systems. We integrate with these systems so **notifications** can be sent to retailers' customers when an item on their wishlist is out of stock, back in stock, or on sale.
 - We also may have **integration with the retailer's sales, product, staff and store data**. These data types are for marketing, attribution and reporting. They're typically integrated via batch processing/synchronisation.
 - In The Wishlist, customers are identified by, at minimum, their email address (this **must be unique**, with no other account attached to the email address) 
 
@@ -28,7 +30,7 @@ We also **integrate inventory, pricing, stores and staff details**. This means w
 
 ### Platform components ###
 
-In addition to the core Wishlist platform, you get the following modules:
+In addition to the core Wishlist platform, we offer the following modules:
 
 - **Store Owner portal** allows retailers to customise system configurations and analyse system performance
 - **Shopify app** is a turnkey solution for Shopify merchants. Provides both frontend customisation and backend integration to The Wishlist
@@ -50,17 +52,19 @@ For example, you can notify customers based on:
 Key considerations for notifications:
 
 - **Product must exist for notifications to be triggered**<br> 
-A customer can add products to their wishlist, even if the product isn't available in the product catalogue. However, the product must exist with attributes such as image, price and description. These attributes have to be sent to the marketing platform with the notification payload. Otherwise the notification won't trigger.
+A customer can add products to their wishlist, even if the product isn't available in the product catalogue. However, the product must exist with attributes such as image, price and description in order for notifications to trigger, as these attributes have to be sent to the marketing platform with the notification payload. 
 - **Stock-based notifications**<br>
-The inventory must be loaded and synchronised into The Wishlist. For price-based notifications, pricing must be loaded and synchronised into The Wishlist.
+For these notifications, inventory must be loaded and synchronised into The Wishlist.
+- **Price-based notifications**<br>
+For price-based notifications, pricing must be loaded and synchronised into The Wishlist.
 - **Emarsys integrations**<br>
-The Wishlist sends all wishlist changes, with wishlist notifications managed in Emarsys.
+The Wishlist sends all wishlist changes to Emarsys, with wishlist notifications managed in and by Emarsys.
 - **Klaviyo**<br>
-Notifications are managed in The Wishlist. Retailers create **flows** in Klaviyo, and The Wishlist creates metrics that are used in the flows. The Wishlist then sends events and payloads to Klaviyo, triggering the appropriate flow.
+Notifications are managed in The Wishlist.  Retailers create **Flows** in Klaviyo, and The Wishlist creates metrics that are used in the Flows. The Wishlist then sends events and payloads to Klaviyo, triggering the appropriate Flow.
 - **DotDigital**<br>
 Notifications are managed in The Wishlist. Retailers register the template associated with the notification in the Store Owner Portal. When a notification is triggered, The Wishlist sends the payload, along with the appropriate template iD, to DotDigital.
 - **Email platform**<br>
-Retailers have the option of using The Wishlist's built-in email platform. Retailers create templates in the Store Owner Portal.
+Retailers have the option of using The Wishlist's built-in email platform. Retailers create email templates direclty in the Store Owner Portal.
 
 ## Data types ##
 
@@ -72,10 +76,10 @@ Retailers have the option of using The Wishlist's built-in email platform. Retai
 |Products|Marketing and notifications|A product does not need to exist before being added to a wishlist. However, it must exist before it can be sent as a customer notification| 
 |Pricing|Marketing and notifications|Required for pricing notifications|
 |Orders (sales)|Determining which wishlist items have converted to sales|Required for conversion and sales reporting|
-|Quotes|A special type of wishlist allowing a business to offer quotes for usage in reminders and tracked for conversions|Optional module. Behaves a little differently to wishlists, and has its own set of notifications|
-|Inventory| Track items low in stock or back in stock|Required for pricing notifications|
+|Quotes|A special type of wishlist allowing a business to send quote reminders and track quotes that convert to orders|Optional module. Behaves a little differently to wishlists, and has its own set of notifications|
+|Inventory|Marketing and notificatins|Required for stock notifications|
 |Staff| Ability to attribute sales and conversions to staff|Required for staff attribution and optional clienteling module|
-|Stores|Ability to attribute sales and conversions to store|Required for staff attribution and optional clienteling module|
+|Stores|Ability to attribute sales and conversions to a store|Required for staff attribution and optional clienteling module|
 
 ## Using the REST APIs ##
 
@@ -87,20 +91,25 @@ The wishlist uses bearer authentication. Tokens expire after **5 hours**. For te
 
 ### Notes & special use cases ###
 
-**Identifiers:** All The Wishlist platform entities have a unique TWC internal identifier. This is typically identified by the appendix id (eg ```customerId```), and an optional unique identifier specified by the customer (typically identified by the appendix reference, eg ```customerRef```). For customers, the email must be unique and is a required field.
+**Identifiers:** All The Wishlist platform entities have a unique TWC internal identifier. This is typically identified by the appendix 'id' (eg ```customerId```), and an optional unique identifier specified by the customer (typically identified by the appendix 'Ref', (eg ```customerRef```). For customers, the email must be unique and is a required field.
 
 **Deleting items:** When using the delete APIs, The Wishlist platform typically marks items for deletion without deleting them from the database. This is because the items are often needed for historical reporting.
 
-**Automatically delete upon item purchase:** The Wishlist doesn't automatically delete an item after it's been purchased by a customer. If you don't want to leave the item in a wishlist, your developer must delete it manually.
+**Deleting wishlist items:** When using the Rest APIs, a delete item API will mark an item as deleted, and no longer return the item in a list of wishlist items, but it will not actually delete the item as it is still required for The Wishlist internal reporting purposes.  Developers should note that  not actually delete the item as it wilNormally, The Wishlist doesn't automatically delete an item after it's been purchased by a customer. If you don't want to leave the item in a wishlist after it is purchased, your developer must delete it using the delete item API.  H
 
-**Added from cart:** For abandoned carts, you have the option to add all items to a wishlist. The Wishlist provides a flag ```addedFromCart``` for developers to record which items have been automatically added to The Wishlist. 
+**Purchase and delete option:** The Wishlist offers an optional setting for retailers called 'Purchase and Delete'.  If this is set TRUE, then Shopify will automatically delete an item from the customer's wishlist when it is purchased.  If it is false, the item will remain in the customer's wishlist even if it is purchased.  Developers using the Rest APIs can also leverage this flag to build similar behaviour in their websites.  
 
-**Pre-release item:** This can be when retailers have pre-release items or collections. They may be accessed from a special URL, or only available to VIP customers. The Wishlist allows items to be flagged as "pre-release" when added to The Wishlist, so developers can identify these items in the future.
+**Added from cart:** For abandoned carts, you have the option to add all items to a wishlist. The Wishlist provides a flag at wishlist item level ```addedFromCart``` for developers to record which items have been automatically added to The Wishlist. 
+
+**Pre-release item:** This Wishlist item flag is for retailers have pre-release items or collections. Often retailers make these items available to VIP customers only, accessible from a special URL. The Wishlist allows items to be flagged as "pre-release" when added to The Wishlist, so developers can identify these items in the future.
 
 ## Extended attribute model ##
 The Wishlist gives developers the power to load additional unique attributes onto our standard entities, for their custom needs. These are **extended attributes** and are defined as key-value pairs.
 
-For example, a developer may want to track a specific custom field against an entity. Maybe a supplier's name, expiry data, or other identifying fields. An item can be recorded and retrieved using standard APIs, but it's not possible to retrieve a record from only these values, because they can't be indexed by the platform.
+For example, a developer may want to track a specific custom field against an entity. Maybe a supplier's name, expiry data, or other identifying fields. Note that this feature enables fields to be added to an entity so that they can be saved and retrieved using our standard APIs, but as our system does not index these fields, it's not possible to retrieve a record using one of these fields as a primary key in an API.  
+
+## Pagination ##
+Where a Wishlist API is returning a list of items, we use pagination to limit the size of the return data set.  Developers can set a page size parameter to adjust this value from the default of 20 items to up to 50 items, however if a list is longer than 50 items, additional GET(s) must be performed to get the remaining records.  The Wishlist will always return records by ascending ID.  For the 2nd and subsequent GET(s), developers need to pass the last item ID received so that The Wishlist knows to return the next highest item as the first record in the next set.
 
 ## Shopify integration ##
 [View Shopify integration documentation](https://the-wishlist-co.github.io/shopify-integration/app-configuration-wishlist-page.html)
