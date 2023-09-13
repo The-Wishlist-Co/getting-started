@@ -3,7 +3,7 @@
 
 ### What is The Wishlist ###
 
-The Wishlist is a microservices-based, API-enabled engine that empowers retailers to understand and manage listd of products that their customers want to purchase.
+The Wishlist is a microservices-based, API-enabled engine that empowers retailers to understand and manage lists of products that their customers want to purchase ("wishlists").
 
 **Automated notifications** can be configured and sent to customers when products are low in stock, back in stock, or available at a discount.
 
