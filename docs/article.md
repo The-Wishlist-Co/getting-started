@@ -17,7 +17,7 @@ The Wishlist integrates web, store, marketing and ERP platforms and operations, 
 
 The core of the platform is the wishlist (The Wishlist platform provides a **master record** for wishlist), customers and products. 
 
-We also **integrate inventory, pricing, stores and staff details** from retailers so that we provide effective and timely marketing communications and reporting of wishlist activities.
+The Wishlist also **integrates inventory, pricing, stores and staff details** from retailers so that it can deliver effective and timely marketing communications and reporting of wishlist activities.
 
 ### Basic concepts ###
 
